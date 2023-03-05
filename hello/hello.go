@@ -5,19 +5,14 @@ import (
 	"log"
 
 	"example.com/greetings"
-	"rsc.io/quote"
 )
 
-func testQuote() {
-	fmt.Println(quote.Go())
-}
-
-func testHello() {
+func hello() {
 	msg, _ := greetings.Hello("golang")
 	fmt.Println(msg)
 }
 
-func testHellos() {
+func hellos() {
 	names := []string{"foo", "bar", "baz"}
 	messages, err := greetings.Hellos(names)
 	if err != nil {
@@ -26,7 +21,7 @@ func testHellos() {
 	fmt.Println(messages)
 }
 
-func testHelloHanleError() {
+func helloHanleError() {
 	msg2, err := greetings.Hello("")
 	if err != nil {
 		log.Fatal(err)
@@ -35,6 +30,6 @@ func testHelloHanleError() {
 }
 
 func main() {
-	testHello()
-	testHellos()
+	hello()
+	hellos()
 }
